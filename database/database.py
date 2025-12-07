@@ -5,7 +5,7 @@ class Database:
     def __init__(self):
         self.tables = {}
 
-    def create_table(self, name, schema):
+    def create_table(self, name, schema, **kwargs):
         if name in self.tables:
             raise ValueError("Table already exists")
-        self.tables[name] = Table(name, schema)
+        self.tables[name] = Table(name, schema, **kwargs)
